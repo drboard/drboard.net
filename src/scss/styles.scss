@@ -1,4 +1,81 @@
+@import 'global';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
 body {
   background: #f4f4f4;
   margin: 0 auto;
+  font-family: $font;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  color: $color;
+  .picture {
+    background-color: $dark-bg-color;
+    border: 1px solid $dark-bg-color;
+    border-radius: 50%;
+    top: 25px;
+    left: 25px;
+    width: 150px;
+    position: absolute;
+    height: 150px;
+  }
+  .content {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 15px;
+    width: 100%;
+    span {
+      color: $span-color;
+    }
+    .name {
+      font-size: $name-size;
+      margin-top: 0.67em;
+      margin-bottom: 0.12em;
+      font-weight: bold;
+    }
+    .title {
+      font-size: $title-size;
+      margin-bottom: 3em;
+      font-weight: bold;
+    }
+    .caption {
+      font-size: $link-size;
+      margin-bottom: 3em;
+      font-weight: normal;
+    }
+    .links {
+      font-size: $link-size;
+      padding-left: 0px;
+      padding-top: 3em;
+      li:nth-child(1):after,
+      li:nth-child(2):after {
+        content: '| ';
+        padding-left: 15px;
+      }
+      li {
+        display: inline-block;
+        font-family: $alt-font;
+        /*text-transform: uppercase;*/
+        padding-right: 15px;
+        a {
+          text-decoration: none;
+          color: $span-color;
+        }
+        a:active,
+        a:hover {
+          color: #333;
+        }
+      }
+    }
+  }
 }
