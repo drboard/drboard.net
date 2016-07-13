@@ -1,4 +1,13 @@
-node_modules/
+# mac
+.DS_Store*
 
+# vim 
 *.swp
 *.swo
+
+# node modules directory
+node_modules/
+
+# build directory
+build/
+
