@@ -18,15 +18,43 @@ body {
   height: 100%;
   width: 100%;
   color: $color;
-  .picture {
-    background-color: $dark-bg-color;
-    border: 1px solid $dark-bg-color;
-    border-radius: 50%;
-    top: 25px;
-    left: 25px;
-    width: 150px;
+  .img-holder {
     position: absolute;
-    height: 150px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    height: 200px;
+    display: table-cell;
+    @media (max-height: $media-1) {
+      background: none;
+      border: none;
+      float: left;
+      position: static;
+      display: inline-block;
+      width: 225px;
+    }
+    .picture {
+      background-color: $dark-bg-color;
+      border: 1px solid $dark-bg-color;
+      border-radius: 50%;
+      top: 25px;
+      left: 25px;
+      width: 150px;
+      position: relative;
+      height: 150px;
+      margin: 0 auto;
+      @media (max-width: $media-1) {
+        display: table-cell;
+        left: 0px;
+      }
+      @media (max-width: $media-0){
+        display: table-cell;
+        margin: 0 auto;
+        background: none;
+        border: none;
+        vertical-align: middle;
+      }
+    }
   }
   .content {
     display: block;
@@ -37,26 +65,47 @@ body {
     span {
       color: $span-color;
     }
-    .name {
-      font-size: $name-size;
-      margin-top: 0.67em;
-      margin-bottom: 0.12em;
-      font-weight: bold;
-    }
-    .title {
-      font-size: $title-size;
-      margin-bottom: 3em;
-      font-weight: bold;
-    }
-    .caption {
-      font-size: $link-size;
-      margin-bottom: 3em;
-      font-weight: normal;
+    .info{
+      margin: 35px 0 0 0;
+      @media (max-width: $media-0) {
+        margin-top: 20px;
+      }
+      li {
+        list-style-type: none;
+        text-align: -webkit-match-parent;
+      }
+      .name {
+        font-size: $name-size;
+        margin-top: 0.67em;
+        margin-bottom: 0.12em;
+        font-weight: bold;
+      }
+      .title {
+        font-size: $title-size;
+        margin-bottom: 3em;
+        font-weight: bold;
+      }
+      .caption {
+        font-size: $link-size;
+        margin-bottom: 3em;
+        font-weight: normal;
+      }
     }
     .links {
+      display: inline-block;
+      margin: 35px 0 0 0;
       font-size: $link-size;
-      padding-left: 0px;
       padding-top: 3em;
+      @media (max-width: $media-0) {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+      @media (max-height: $media-1) {
+        /*position: absolute;*/
+        bottom: 20px;
+        right: 20px;
+      }
       li:nth-child(1):after,
       li:nth-child(2):after {
         content: '| ';
@@ -65,11 +114,13 @@ body {
       li {
         display: inline-block;
         font-family: $alt-font;
-        /*text-transform: uppercase;*/
         padding-right: 15px;
         a {
           text-decoration: none;
           color: $span-color;
+          display: inline-block;
+          -webkit-transition: all .2s ease-out;
+          transition: all .2s ease-out;
         }
         a:active,
         a:hover {
