@@ -1,6 +1,7 @@
 var gulp    = require('gulp');
 var scss    = require('gulp-sass');
 var uglify  = require('gulp-uglify');
+var concat  = require('gulp-concat');
 var browserSync = require('browser-sync');
 var htmlmin = require('gulp-htmlmin');
 
@@ -15,9 +16,10 @@ gulp.task('build', function() {
     .pipe(uglify())
     .pipe(gulp.dest('build/js'));
  
-  // minify scss -> css
+  // minify scss -> css and concat
   gulp.src('src/scss/**/*.scss') 
     .pipe(scss())
+    .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/css'));
 
   // minify html
