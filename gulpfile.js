@@ -18,7 +18,7 @@ gulp.task('build', function() {
   // minify scss -> css
   gulp.src('src/scss/**/*.scss') 
     .pipe(scss())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('build/css'));
 
   // minify html
   gulp.src('src/*.html')
