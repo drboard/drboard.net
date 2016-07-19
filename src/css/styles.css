@@ -22,7 +22,7 @@ body {
     top: 0px;
     height: 200px;
     display: table-cell; }
-    @media (max-height: 560px) {
+    @media (max-height: 530px) {
       body .img-holder {
         background: none;
         border: none;
@@ -40,7 +40,7 @@ body {
       position: relative;
       height: 150px;
       margin: 0 auto; }
-      @media (max-width: 560px) {
+      @media (max-width: 530px) {
         body .img-holder .picture {
           display: table-cell;
           left: 0px; } }
@@ -90,7 +90,7 @@ body {
           position: absolute;
           bottom: 20px;
           left: 20px; } }
-      @media (max-height: 560px) {
+      @media (max-height: 530px) {
         body .content .links {
           /*position: absolute;*/
           bottom: 20px;
